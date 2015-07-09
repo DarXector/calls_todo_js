@@ -153,7 +153,7 @@ App.controller("CallsTODO", function ($scope, $filter, localStorageService) {
 		}
 
 		// Removing all the special characters, replacing + symbol with 00 and removing blank spaces to unify the format of the phone number entries
-		$scope.newPhone = $scope.newPhone.replace(/\+/g, "00").replace(/\s|\(|\)/g, "");
+		$scope.newPhone = $scope.newPhone.replace(/\+/g, "00").replace(/\-|\s|\(|\)/g, "");
 
 		// Validating if the time entry is in the required format
 		if(!timeRe.test($scope.newTime)){
