@@ -1,0 +1,54 @@
+#app{
+	margin-top: 75px;
+}
+
+#app .row {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+#app .close{
+	margin-top: -2px;
+}
+
+.todoField{
+	margin: 20px 5px;
+	width: 25%;
+}
+
+#todoSubmit{
+	margin-top: -4px;
+}
+
+.todoTask{
+	margin-bottom: 20px;
+}
+
+.caret-down, .caret-up{
+	width:5px;
+	height:5px;
+	position:relative;
+}
+.caret-down:before{
+	content:'';
+	position:absolute;
+	top:6px;
+	left:5px;
+	width:0;
+	height:0;
+	border: 5px solid transparent;
+	border-top-color: #337ab7;
+	border-bottom-width: 0;
+}
+
+.caret-up:before{
+	content:'';
+	position:absolute;
+	top:6px;
+	left:5px;
+	width:0;
+	height:0;
+	border: 5px solid transparent;
+	border-top-width: 0;
+	border-bottom-color: #337ab7;
+}
