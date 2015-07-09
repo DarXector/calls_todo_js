@@ -37,15 +37,15 @@ Used for displaying the next item in the Next Item table
 init
 Initialize the App
 
-### $scope.updateToDoList
-
-Update List every second to check if call time has passed and toggle it's checkbox.
-Also check Next Call Todo Entry.
-
 ### $scope.show
 
 By default show all entries
 **type** `String`
+
+### $scope.updateToDoList()
+
+Update List every second to check if call time has passed and toggle it's checkbox.
+Also check Next Call Todo Entry.
 
 ### $scope.addTodo()
 
