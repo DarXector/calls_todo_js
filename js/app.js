@@ -2,7 +2,15 @@
 
 var App = angular.module("CallsTODOApp", ["LocalStorageModule"]); // Using LocalStorageModule for simplified local storage acces with cookie fallback https://github.com/grevory/angular-local-storage
 
-App.controller("CallsTODO", function ($scope, $filter, localStorageService) {
+App.controller("CallsTODO",
+
+	/**
+	 * @param $scope
+	 * @param $filter
+	 * @param $interval
+	 * @param localStorageService
+	 */
+	function ($scope, $filter, $interval, localStorageService) {
 
 	/**
 	 * set the default sort type (by Name or by Time)
@@ -24,7 +32,6 @@ App.controller("CallsTODO", function ($scope, $filter, localStorageService) {
 	$scope.nextTodo = {name: "", phone:"", time:""};
 
 	/**
-	 * init
 	 * Initialize the App
 	 */
 	$scope.init = function () {
@@ -51,6 +58,24 @@ App.controller("CallsTODO", function ($scope, $filter, localStorageService) {
 		 * @type {String}
 		 */
 		$scope.show = "All";
+
+		// Check time and Next Call every second and update the entries
+		$interval(function(){ $scope.updateToDoList();}, 1000);
+	};
+
+	/**
+	 * Update List every second to check if call time has passed and toggle it's checkbox
+	 * Also check Next Call Todo Entry
+	 */
+	$scope.updateToDoList = function(){
+
+		for(var i = 0, l = $scope.todos.length; i < l; i++){
+			if($scope.dateCompare($scope.todos[i].time, $scope.getCurrentTime()) < 0 && !$scope.todos[i].isDone){
+				$scope.todos[i].isDone = true;
+			}
+		}
+
+		$scope.nextTodo = $scope.getNextTodo();
 	};
 
 	/**
@@ -266,8 +291,6 @@ App.controller("CallsTODO", function ($scope, $filter, localStorageService) {
 		if (newVal !== null && angular.isDefined(newVal) && newVal !== oldVal) {
 			localStorageService.add("todoCallsList", angular.toJson(newVal));
 		}
-
-		$scope.nextTodo = $scope.getNextTodo();
 
 	}, true);
 
