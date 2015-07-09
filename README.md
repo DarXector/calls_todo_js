@@ -8,6 +8,7 @@ Detailed documentation concerning App.js functionality can be found in the comme
 
 * * *
 **Parameters**
+
 **$scope**
 **$filter**
 **$interval**
