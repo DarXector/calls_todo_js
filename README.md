@@ -12,20 +12,20 @@ Detailed documentation concerning App.js functionality can be found in the comme
 
 Set the default sort type (by Name or by Time)
 
-**Type**" `string`
+**Type**: `String`
 
 ### $scope.sortReverse
 
 Set the default sort order
 
-**Type**" `Boolean`
+**Type**: `Boolean`
 
 ### $scope.nextTodo
 
 Object containing the next to-do item, sorted by time.
 Used for displaying the next item in the Next Item table
 
-**Type**" `Object`
+**Type**: `Object`
 
 ### $scope.init()
 
@@ -35,7 +35,7 @@ Initialize the App
 ### $scope.show
 
 By default show all entries
-**type** `string`
+**type** `String`
 
 ### $scope.addTodo()
 
@@ -55,7 +55,7 @@ Deleting a TODO entry
 
 **Parameters**
 
-**item**: , Deleting a TODO entry
+**item**: `Object`
 
 
 
@@ -63,7 +63,7 @@ Deleting a TODO entry
 
 Getting current time from the Date object and formatting it to HH:MM
 
-**Returns**: `string`
+**Returns**: `String`
 
 
 ### $scope.dateCompare(time1, time2)
@@ -76,7 +76,7 @@ Comparing times. Returns 1 if greater, -1 if less and 0 if the same
 
 **time2**: , Comparing times. Returns 1 if greater, -1 if less and 0 if the same
 
-**Returns**: `number`
+**Returns**: `Number`
 
 
 ### $scope.showFn(todo)
@@ -89,7 +89,7 @@ Checks if todo entry belongs to one of these categories
 **todo**: , Filter Function for All | Next | Finished.
 Checks if todo entry belongs to one of these categories
 
-**Returns**: `boolean`
+**Returns**: `Boolean`
 
 
 ### $scope.getNextTodo()
@@ -101,6 +101,7 @@ Getting the next TODO entry if any
 ### ordered
 
 First order the todo list to increasing values by time
+
 **type**: `Array`
 
 * * *
