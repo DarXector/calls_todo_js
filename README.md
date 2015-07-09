@@ -72,9 +72,9 @@ Comparing times. Returns 1 if greater, -1 if less and 0 if the same
 
 **Parameters**
 
-**time1**: , Comparing times. Returns 1 if greater, -1 if less and 0 if the same
+**time1**: `String`
 
-**time2**: , Comparing times. Returns 1 if greater, -1 if less and 0 if the same
+**time2**: `String`
 
 **Returns**: `Number`
 
@@ -86,7 +86,8 @@ Checks if todo entry belongs to one of these categories
 
 **Parameters**
 
-**todo**: , Filter Function for All | Next | Finished.
+**todo**: `Object`
+
 Checks if todo entry belongs to one of these categories
 
 **Returns**: `Boolean`
